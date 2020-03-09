@@ -122,13 +122,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun reset(view: View) {
-        val ids = arrayListOf("d4", "d6", "d8", "d10", "d12", "d20", "d100", "mod")
+        val ids = arrayListOf("d4", "d6", "d8", "d10", "d12", "d20", "d100", "mod", "dn1", "x1")
         for (i in ids) {
             val view = findViewByName<TextView>(i)
             view.text = "0"
         }
 
-        val view = findViewByName<TextView>("resultText")
+        var view = findViewByName<TextView>("resultText")
+        view.text = ""
+
+        view = findViewById<TextView>(R.id.expr)
         view.text = ""
     }
 
