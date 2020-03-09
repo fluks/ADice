@@ -31,10 +31,12 @@ class MainActivity : AppCompatActivity() {
         var checked = sharedPref.getBoolean(getString(R.string.sound_setting), soundOn)
         var item = menu.findItem(R.id.sound_setting)
         item.setChecked(checked)
+        setSound(checked)
 
         checked = sharedPref.getBoolean(getString(R.string.verbose_setting), verboseOn)
         item = menu.findItem(R.id.verbose_setting)
         item.setChecked(checked)
+        setVerbose(checked)
 
         return true
     }
