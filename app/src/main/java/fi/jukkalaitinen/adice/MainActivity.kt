@@ -3,7 +3,6 @@ package fi.jukkalaitinen.adice
 import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
