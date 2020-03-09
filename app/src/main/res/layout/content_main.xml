@@ -72,10 +72,9 @@
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:onClick="reset"
         android:text="@string/reset_button"
-        app:layout_constraintBottom_toTopOf="@+id/dn1"
+        app:layout_constraintBottom_toBottomOf="@+id/mod"
         app:layout_constraintEnd_toEndOf="@+id/rollButton" />
 
     <TextView
@@ -476,12 +475,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="numberSigned"
         android:text="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/dNText1" />
+        app:layout_constraintStart_toEndOf="@+id/dNText1"
+        app:layout_constraintTop_toBottomOf="@+id/mod" />
 
     <ImageButton
         android:id="@+id/incrDN1"
