@@ -1,544 +1,549 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:isScrollContainer="true"
-    android:scrollbars="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <ImageButton
-        android:id="@+id/incrMod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/mod"
-        app:layout_constraintTop_toTopOf="@+id/modText"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:scrollbars="vertical">
 
-    <TextView
-        android:id="@+id/x"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:text="X"
-        app:layout_constraintStart_toEndOf="@+id/decrDN1"
-        app:layout_constraintTop_toTopOf="@+id/decrDN1" />
+        <ImageButton
+            android:id="@+id/incrMod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/mod"
+            app:layout_constraintTop_toTopOf="@+id/modText"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <TextView
-        android:id="@+id/d4Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d4"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d4"
-        app:layout_constraintEnd_toEndOf="@+id/exprText"
-        app:layout_constraintTop_toTopOf="@+id/d4" />
+        <TextView
+            android:id="@+id/x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="X"
+            app:layout_constraintStart_toEndOf="@+id/decrDN1"
+            app:layout_constraintTop_toTopOf="@+id/decrDN1" />
 
-    <EditText
-        android:id="@+id/resultText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:cursorVisible="false"
-        android:ems="10"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/rollButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/decrD10"
-        app:layout_constraintTop_toBottomOf="@+id/expr" />
+        <TextView
+            android:id="@+id/d4Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d4"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d4"
+            app:layout_constraintEnd_toEndOf="@+id/exprText"
+            app:layout_constraintTop_toTopOf="@+id/d4" />
 
-    <Button
-        android:id="@+id/rollButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:onClick="roll"
-        android:text="@string/roll_button"
-        app:layout_constraintBottom_toTopOf="@+id/resetButton"
-        app:layout_constraintEnd_toEndOf="@+id/resultText"
-        app:layout_constraintStart_toStartOf="@+id/resultText"
-        app:layout_constraintTop_toBottomOf="@+id/resultText" />
+        <EditText
+            android:id="@+id/resultText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/rollButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/decrD10"
+            app:layout_constraintTop_toBottomOf="@+id/expr" />
 
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="reset"
-        android:text="@string/reset_button"
-        app:layout_constraintBottom_toBottomOf="@+id/mod"
-        app:layout_constraintEnd_toEndOf="@+id/rollButton" />
+        <Button
+            android:id="@+id/rollButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="roll"
+            android:text="@string/roll_button"
+            app:layout_constraintBottom_toTopOf="@+id/resetButton"
+            app:layout_constraintEnd_toEndOf="@+id/resultText"
+            app:layout_constraintStart_toStartOf="@+id/resultText"
+            app:layout_constraintTop_toBottomOf="@+id/resultText" />
 
-    <TextView
-        android:id="@+id/d6Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d6"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d6"
-        app:layout_constraintEnd_toEndOf="@+id/d4Text"
-        app:layout_constraintTop_toTopOf="@+id/d6" />
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="reset"
+            android:text="@string/reset_button"
+            app:layout_constraintBottom_toBottomOf="@+id/mod"
+            app:layout_constraintEnd_toEndOf="@+id/rollButton" />
 
-    <TextView
-        android:id="@+id/d8Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d8"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d8"
-        app:layout_constraintEnd_toEndOf="@+id/d6Text"
-        app:layout_constraintTop_toTopOf="@+id/d8" />
+        <TextView
+            android:id="@+id/d6Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d6"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d6"
+            app:layout_constraintEnd_toEndOf="@+id/d4Text"
+            app:layout_constraintTop_toTopOf="@+id/d6" />
 
-    <TextView
-        android:id="@+id/d10Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d10"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d10"
-        app:layout_constraintEnd_toEndOf="@+id/d8Text"
-        app:layout_constraintTop_toTopOf="@+id/d10" />
+        <TextView
+            android:id="@+id/d8Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d8"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d8"
+            app:layout_constraintEnd_toEndOf="@+id/d6Text"
+            app:layout_constraintTop_toTopOf="@+id/d8" />
 
-    <TextView
-        android:id="@+id/d12Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d12"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d12"
-        app:layout_constraintEnd_toEndOf="@+id/d10Text"
-        app:layout_constraintTop_toTopOf="@+id/d12" />
+        <TextView
+            android:id="@+id/d10Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d10"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d10"
+            app:layout_constraintEnd_toEndOf="@+id/d8Text"
+            app:layout_constraintTop_toTopOf="@+id/d10" />
 
-    <TextView
-        android:id="@+id/d20Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d20"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d20"
-        app:layout_constraintEnd_toEndOf="@+id/d12Text"
-        app:layout_constraintTop_toTopOf="@+id/d20" />
+        <TextView
+            android:id="@+id/d12Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d12"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d12"
+            app:layout_constraintEnd_toEndOf="@+id/d10Text"
+            app:layout_constraintTop_toTopOf="@+id/d12" />
 
-    <TextView
-        android:id="@+id/d100Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="d100"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/d100"
-        app:layout_constraintEnd_toEndOf="@+id/d20Text"
-        app:layout_constraintTop_toTopOf="@+id/d100" />
+        <TextView
+            android:id="@+id/d20Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d20"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d20"
+            app:layout_constraintEnd_toEndOf="@+id/d12Text"
+            app:layout_constraintTop_toTopOf="@+id/d20" />
 
-    <TextView
-        android:id="@+id/modText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mod"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/mod"
-        app:layout_constraintEnd_toEndOf="@+id/d100Text"
-        app:layout_constraintTop_toTopOf="@+id/mod" />
+        <TextView
+            android:id="@+id/d100Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d100"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/d100"
+            app:layout_constraintEnd_toEndOf="@+id/d20Text"
+            app:layout_constraintTop_toTopOf="@+id/d100" />
 
-    <TextView
-        android:id="@+id/dNText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dN"
-        app:layout_constraintBottom_toBottomOf="@+id/dn1"
-        app:layout_constraintEnd_toEndOf="@+id/modText"
-        app:layout_constraintTop_toTopOf="@+id/dn1" />
+        <TextView
+            android:id="@+id/modText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mod"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/mod"
+            app:layout_constraintEnd_toEndOf="@+id/d100Text"
+            app:layout_constraintTop_toTopOf="@+id/mod" />
 
-    <Button
-        android:id="@+id/newDiceButton"
-        android:layout_width="28dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/decrX1"
-        app:layout_constraintTop_toTopOf="@+id/x" />
+        <TextView
+            android:id="@+id/dNText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dN"
+            app:layout_constraintBottom_toBottomOf="@+id/dn1"
+            app:layout_constraintEnd_toEndOf="@+id/modText"
+            app:layout_constraintTop_toTopOf="@+id/dn1" />
 
-    <TextView
-        android:id="@+id/exprText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="expr"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/expr"
-        app:layout_constraintEnd_toStartOf="@+id/expr"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/expr" />
+        <Button
+            android:id="@+id/newDiceButton"
+            android:layout_width="28dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/decrX1"
+            app:layout_constraintTop_toTopOf="@+id/x" />
 
-    <AutoCompleteTextView
-        android:id="@+id/expr"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="@string/exprHint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/exprText"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/exprText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="expr"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/expr"
+            app:layout_constraintEnd_toStartOf="@+id/expr"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/expr" />
 
-    <EditText
-        android:id="@+id/d4"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d4Text"
-        app:layout_constraintTop_toBottomOf="@+id/expr" />
+        <AutoCompleteTextView
+            android:id="@+id/expr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/exprHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/exprText"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/incrD4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d4"
-        app:layout_constraintTop_toTopOf="@+id/d4Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <EditText
+            android:id="@+id/d4"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d4Text"
+            app:layout_constraintTop_toBottomOf="@+id/expr" />
 
-    <ImageButton
-        android:id="@+id/decrD4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrD4"
-        app:layout_constraintTop_toTopOf="@+id/incrD4"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d4"
+            app:layout_constraintTop_toTopOf="@+id/d4Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <EditText
-        android:id="@+id/d6"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d6Text"
-        app:layout_constraintTop_toBottomOf="@+id/d4" />
+        <ImageButton
+            android:id="@+id/decrD4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrD4"
+            app:layout_constraintTop_toTopOf="@+id/incrD4"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/incrD6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d6"
-        app:layout_constraintTop_toTopOf="@+id/d6Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <EditText
+            android:id="@+id/d6"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d6Text"
+            app:layout_constraintTop_toBottomOf="@+id/d4" />
 
-    <ImageButton
-        android:id="@+id/decrD6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrD6"
-        app:layout_constraintTop_toTopOf="@+id/incrD6"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d6"
+            app:layout_constraintTop_toTopOf="@+id/d6Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <EditText
-        android:id="@+id/d8"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d8Text"
-        app:layout_constraintTop_toBottomOf="@+id/d6" />
+        <ImageButton
+            android:id="@+id/decrD6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrD6"
+            app:layout_constraintTop_toTopOf="@+id/incrD6"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <EditText
-        android:id="@+id/d10"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d10Text"
-        app:layout_constraintTop_toBottomOf="@+id/d8" />
+        <EditText
+            android:id="@+id/d8"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d8Text"
+            app:layout_constraintTop_toBottomOf="@+id/d6" />
 
-    <EditText
-        android:id="@+id/d12"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d12Text"
-        app:layout_constraintTop_toBottomOf="@+id/d10" />
+        <EditText
+            android:id="@+id/d10"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d10Text"
+            app:layout_constraintTop_toBottomOf="@+id/d8" />
 
-    <EditText
-        android:id="@+id/d20"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d20Text"
-        app:layout_constraintTop_toBottomOf="@+id/d12" />
+        <EditText
+            android:id="@+id/d12"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d12Text"
+            app:layout_constraintTop_toBottomOf="@+id/d10" />
 
-    <EditText
-        android:id="@+id/d100"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/d100Text"
-        app:layout_constraintTop_toBottomOf="@+id/d20" />
+        <EditText
+            android:id="@+id/d20"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d20Text"
+            app:layout_constraintTop_toBottomOf="@+id/d12" />
 
-    <EditText
-        android:id="@+id/mod"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/modText"
-        app:layout_constraintTop_toBottomOf="@+id/d100" />
+        <EditText
+            android:id="@+id/d100"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/d100Text"
+            app:layout_constraintTop_toBottomOf="@+id/d20" />
 
-    <ImageButton
-        android:id="@+id/incrD8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d8"
-        app:layout_constraintTop_toTopOf="@+id/d8Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <EditText
+            android:id="@+id/mod"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/modText"
+            app:layout_constraintTop_toBottomOf="@+id/d100" />
 
-    <ImageButton
-        android:id="@+id/decrD8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrD8"
-        app:layout_constraintTop_toTopOf="@+id/incrD8"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d8"
+            app:layout_constraintTop_toTopOf="@+id/d8Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <ImageButton
-        android:id="@+id/incrD10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d10"
-        app:layout_constraintTop_toTopOf="@+id/d10Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/decrD8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrD8"
+            app:layout_constraintTop_toTopOf="@+id/incrD8"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/decrD10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintEnd_toStartOf="@+id/resultText"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/incrD10"
-        app:layout_constraintTop_toTopOf="@+id/incrD10"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d10"
+            app:layout_constraintTop_toTopOf="@+id/d10Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <ImageButton
-        android:id="@+id/incrD12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d12"
-        app:layout_constraintTop_toTopOf="@+id/d12Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/decrD10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintEnd_toStartOf="@+id/resultText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/incrD10"
+            app:layout_constraintTop_toTopOf="@+id/incrD10"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/decrD12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrD12"
-        app:layout_constraintTop_toTopOf="@+id/incrD12"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d12"
+            app:layout_constraintTop_toTopOf="@+id/d12Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <ImageButton
-        android:id="@+id/incrD20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d20"
-        app:layout_constraintTop_toTopOf="@+id/d20Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/decrD12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrD12"
+            app:layout_constraintTop_toTopOf="@+id/incrD12"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/decrD20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrD20"
-        app:layout_constraintTop_toTopOf="@+id/incrD20"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d20"
+            app:layout_constraintTop_toTopOf="@+id/d20Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <ImageButton
-        android:id="@+id/incrD100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/d100"
-        app:layout_constraintTop_toTopOf="@+id/d100Text"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/decrD20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrD20"
+            app:layout_constraintTop_toTopOf="@+id/incrD20"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/decrD100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrD100"
-        app:layout_constraintTop_toTopOf="@+id/incrD100"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrD100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/d100"
+            app:layout_constraintTop_toTopOf="@+id/d100Text"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <ImageButton
-        android:id="@+id/decrMod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrMod"
-        app:layout_constraintTop_toTopOf="@+id/incrMod"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/decrD100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrD100"
+            app:layout_constraintTop_toTopOf="@+id/incrD100"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <EditText
-        android:id="@+id/dn1"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/dNText1"
-        app:layout_constraintTop_toBottomOf="@+id/mod" />
+        <ImageButton
+            android:id="@+id/decrMod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrMod"
+            app:layout_constraintTop_toTopOf="@+id/incrMod"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/incrDN1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/dn1"
-        app:layout_constraintTop_toTopOf="@+id/dNText1"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <EditText
+            android:id="@+id/dn1"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/dNText1"
+            app:layout_constraintTop_toBottomOf="@+id/mod" />
 
-    <ImageButton
-        android:id="@+id/decrDN1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrDN1"
-        app:layout_constraintTop_toTopOf="@+id/incrDN1"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrDN1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/dn1"
+            app:layout_constraintTop_toTopOf="@+id/dNText1"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <ImageButton
-        android:id="@+id/incrX1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/x1"
-        app:layout_constraintTop_toTopOf="@+id/x"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <ImageButton
+            android:id="@+id/decrDN1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrDN1"
+            app:layout_constraintTop_toTopOf="@+id/incrDN1"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-    <ImageButton
-        android:id="@+id/decrX1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:onClick="incrementOrdecrementDice"
-        app:layout_constraintStart_toEndOf="@+id/incrX1"
-        app:layout_constraintTop_toTopOf="@+id/x"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+        <ImageButton
+            android:id="@+id/incrX1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/x1"
+            app:layout_constraintTop_toTopOf="@+id/x"
+            app:srcCompat="@android:drawable/arrow_up_float" />
 
-    <EditText
-        android:id="@+id/x1"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/x"
-        app:layout_constraintTop_toTopOf="@+id/dn1" />
+        <ImageButton
+            android:id="@+id/decrX1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="incrementOrdecrementDice"
+            app:layout_constraintStart_toEndOf="@+id/incrX1"
+            app:layout_constraintTop_toTopOf="@+id/x"
+            app:srcCompat="@android:drawable/arrow_down_float" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/x1"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="0"
+            app:layout_constraintStart_toEndOf="@+id/x"
+            app:layout_constraintTop_toTopOf="@+id/dn1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
