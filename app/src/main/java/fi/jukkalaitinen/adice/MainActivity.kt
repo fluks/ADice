@@ -7,9 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
+import androidx.core.widget.doAfterTextChanged
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.IOException
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +23,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        val expr = findViewById<TextView>(R.id.expr)
+        val rollButton = findViewById<Button>(R.id.rollButton)
+        expr.doAfterTextChanged {
+            val del = DiceExpressionLexer(expr.text.toString())
+            val de = DiceExpression(del)
+            try {
+                if (expr.text.isEmpty() || de.parse()) {
+                    expr.setBackgroundResource(R.color.valid)
+                    rollButton.setEnabled(true)
+                }
+                else {
+                    expr.setBackgroundResource(R.color.invalid)
+                    rollButton.setEnabled(false)
+                }
+            }
+            catch (e: IOException) {
+                expr.setBackgroundResource(R.color.invalid)
+                rollButton.setEnabled(false)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -77,6 +101,21 @@ class MainActivity : AppCompatActivity() {
     fun roll(view: View) {
         var result = 0
         var resultText = ""
+
+        val expr = findViewById<TextView>(R.id.expr)
+        if (!expr.text.isEmpty()) {
+            val del = DiceExpressionLexer(expr.text.toString())
+            val de = DiceExpression(del)
+            try {
+                if (de.parse()) {
+                    result += de.result
+                    resultText += de.resultString.string
+                } else
+                    return
+            } catch (e: IOException) {
+                return
+            }
+        }
 
         val diceIds = arrayListOf(4, 6, 8, 10, 12, 20, 100)
         for (d in diceIds) {
