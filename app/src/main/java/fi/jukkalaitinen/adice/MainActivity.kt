@@ -98,6 +98,8 @@ class MainActivity : AppCompatActivity() {
         diceView.text = n.toString()
     }
 
+    data class RollDiceReturn(var result: Int = 0, var string: String = "")
+
     fun roll(view: View) {
         var result = 0
         var resultText = ""
@@ -124,29 +126,24 @@ class MainActivity : AppCompatActivity() {
             if (n == 0)
                 continue
 
-            val times = Math.abs(n)
-            var res = 0
-            var results = arrayListOf<Int>()
-            for (x in 1 .. times) {
-                val i = Random.nextInt(1, d + 1)
-                res += i
-                results.add(i)
-            }
-            if (n < 0) {
-                res *= -1
-                resultText += "-"
-            }
-            else
-                resultText += "+"
-            result += res
-            resultText += results.joinToString(prefix = "(", postfix = ")", separator = "+")
+            val res = rollDice(n, d)
+            result += res.result
+            resultText += res.string
         }
 
         var view = findViewByName<TextView>("mod")
         val mod = view.text.toString().toInt(10)
         if (mod != 0)
-            resultText = (if (mod < 0) "-" else "+") + mod.toString()
+            resultText += (if (mod < 0) "-" else "+") + mod.toString()
         result += mod
+
+        val dice = findViewById<TextView>(R.id.dn1).text.toString().toInt(10)
+        val nRolls = findViewById<TextView>(R.id.x1).text.toString().toInt(10)
+        if (dice != 0 && nRolls != 0) {
+            val res = rollDice(nRolls, dice)
+            result += res.result
+            resultText += res.string
+        }
 
         view = findViewByName<TextView>("resultText")
         if (resultText.startsWith("+"))
@@ -159,6 +156,26 @@ class MainActivity : AppCompatActivity() {
             val mp = MediaPlayer.create(applicationContext, R.raw.dices)
             mp?.start()
         }
+    }
+
+    fun rollDice(n: Int, dice: Int): RollDiceReturn {
+        var res = RollDiceReturn()
+        val times = Math.abs(n)
+        val results = arrayListOf<Int>()
+        for (x in 1 .. times) {
+            val i = Random.nextInt(1, dice + 1)
+            res.result += i
+            results.add(i)
+        }
+        if (n < 0) {
+            res.result *= -1
+            res.string += "-"
+        }
+        else
+            res.string += "+"
+        res.string += results.joinToString(prefix = "(", postfix = ")", separator = "+")
+
+        return res
     }
 
     fun reset(view: View) {
