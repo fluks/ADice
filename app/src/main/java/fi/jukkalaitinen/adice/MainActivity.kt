@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
             resultText += res.string
         }
 
-        var view = findViewByName<TextView>("mod")
+        var view = findViewById<TextView>(R.id.mod)
         val mod = view.text.toString().toInt(10)
         if (mod != 0)
             resultText += (if (mod < 0) "-" else "+") + mod.toString()
@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
             resultText += res.string
         }
 
-        view = findViewByName<TextView>("resultText")
+        view = findViewById<TextView>(R.id.resultText)
         if (resultText.startsWith("+"))
             resultText = resultText.substring(1)
         if (resultText.isEmpty())
