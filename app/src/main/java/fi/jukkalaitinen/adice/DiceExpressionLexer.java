@@ -78,7 +78,4 @@ class DiceExpressionLexer implements DiceExpression.Lexer {
         else
             return st.ttype;
     }
-
-
-
 }
