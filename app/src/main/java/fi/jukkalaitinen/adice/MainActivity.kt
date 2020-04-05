@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     fun incrementOrdecrementDice(view: View) {
         val name = view.resources.getResourceEntryName(view.id)
         val dice = name.split("incr", "decr")[1].toLowerCase()
-        var change = if (name.startsWith("incr")) 1 else -1
+        val change = if (name.startsWith("incr")) 1 else -1
         val diceView = findViewByName<TextView>(dice)
         val n = diceView.text.toString().toInt(10) + change
         diceView.text = n.toString()
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
     data class RollDiceReturn(var result: Int = 0, var string: String = "")
 
-    fun roll(view: View) {
+    fun roll(v: View) {
         var result = 0
         var resultText = ""
 
@@ -158,7 +158,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun rollDice(n: Int, dice: Int): RollDiceReturn {
-        var res = RollDiceReturn()
+        val res = RollDiceReturn()
         val times = Math.abs(n)
         val results = arrayListOf<Int>()
         for (x in 1 .. times) {
@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity() {
         return res
     }
 
-    fun reset(view: View) {
+    fun reset(v: View) {
         val ids = arrayListOf("d4", "d6", "d8", "d10", "d12", "d20", "d100", "mod", "dn1", "x1")
         for (i in ids) {
             val view = findViewByName<TextView>(i)
