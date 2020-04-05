@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ADice</string>
-    <string name="action_settings">Settings</string>
     <string name="roll_button">Roll</string>
     <string name="reset_button">Reset</string>
     <string name="exprHint">3d6&lt;&gt;1-3d10&lt;2+2</string>
