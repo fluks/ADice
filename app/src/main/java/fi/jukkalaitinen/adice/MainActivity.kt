@@ -133,7 +133,7 @@ class MainActivity : AppCompatActivity() {
         var view = findViewById<TextView>(R.id.mod)
         val mod = view.text.toString().toInt(10)
         if (mod != 0)
-            resultText += (if (mod < 0) "-" else "+") + mod.toString()
+            resultText += (if (mod > 0) "+" else "") + mod.toString()
         result += mod
 
         val dice = findViewById<TextView>(R.id.dn1).text.toString().toInt(10)
