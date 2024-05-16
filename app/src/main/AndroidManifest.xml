@@ -11,7 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PrivacyPolicyActivity"
+            android:label="@string/privacy_policy"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

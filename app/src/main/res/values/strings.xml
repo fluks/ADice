@@ -5,4 +5,9 @@
     <string name="exprHint">3d6&lt;&gt;1-3d10&lt;2+2</string>
     <string name="sound_setting">Sound</string>
     <string name="verbose_setting">Verbose</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="privacy_policy_text">ADice Privacy Policy
+
+This app doesn\'t collect any data or isn\'t connected to internet. Only data this app saves or gathers is the settings.</string>
+    <string name="privacy_policy_text_short">This app doesn\'t collect any data or isn\'t connected to internet. Only data this app saves or gathers is the settings.</string>
 </resources>

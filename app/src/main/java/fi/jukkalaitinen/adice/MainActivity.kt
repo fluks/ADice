@@ -1,16 +1,16 @@
 package fi.jukkalaitinen.adice
 
 import android.content.Context
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
-
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 import kotlin.random.Random
@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity() {
             R.id.verbose_setting -> {
                 setVerbose(!item.isChecked)
                 item.setChecked(!item.isChecked)
+                true
+            }
+            R.id.privacy_policy -> {
+                openPrivacyPolicy()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -209,5 +213,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         verboseOn = checked
+    }
+
+    fun openPrivacyPolicy() {
+        val intent = Intent(this, PrivacyPolicyActivity::class.java)
+        startActivity(intent)
     }
 }
